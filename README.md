@@ -5,7 +5,7 @@
 ## 安装
 
 ```shell
-yarn add @whaoa/element-ui-form-verify
+yarn add @whaoa.w/element-ui-form-verify
 ```
 
 ```js
@@ -77,7 +77,7 @@ export default {
 #### 注册全局校验规则
 
 ```js
-import ElementUIFormVerify from '@whaoa/element-ui-form-verify';
+import ElementUIFormVerify from '@whaoa.w/element-ui-form-verify';
 
 Vue.use(ElementUIFormVerify);
 
