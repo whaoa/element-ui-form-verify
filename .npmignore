@@ -1,0 +1,17 @@
+.idea/
+.vscode/
+
+dist/view/
+dist/lib/**/*.html
+
+public/
+src/view/
+src/*.d.ts
+
+.editorconfig
+.browserslistrc
+.eslintrc.js
+tsconfig.json
+babel.config.js
+vue.config.js
+
