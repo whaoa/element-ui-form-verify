@@ -18,12 +18,14 @@
   "bugs": {
     "url": "https://github.com/whaoa/element-ui-form-verify/issues"
   },
+  "main": "dist/lib/elementUIFormVerify.umd.min.js",
   "typings": "dist/lib/types/main.d.ts",
   "scripts": {
     "dev": "vue-cli-service serve ./src/view/main.ts",
     "build:lib": "vue-cli-service build --target lib --name elementUIFormVerify --dest dist/lib ./src/lib/main.ts",
     "build:dts": "tsc --outDir dist/lib/types --declaration --emitDeclarationOnly ./src/lib/main.ts",
     "build:view": "vue-cli-service build --dest dist/view ./src/view/main.ts",
+    "publish": "npm run build:lib && npm run build:dts && npm publish --access=public",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
