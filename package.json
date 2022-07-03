@@ -25,7 +25,7 @@
     "build:lib": "vue-cli-service build --target lib --name elementUIFormVerify --dest dist/lib ./src/lib/main.ts",
     "build:dts": "tsc --outDir dist/lib/types --declaration --emitDeclarationOnly ./src/lib/main.ts",
     "build:view": "vue-cli-service build --dest dist/view ./src/view/main.ts",
-    "publish": "npm run build:lib && npm run build:dts && npm publish --access=public",
+    "prepublish": "npm run build:lib && npm run build:dts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
