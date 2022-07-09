@@ -2,19 +2,28 @@ import { add, get } from './internal/rule';
 
 export default function addInternalRules(addRule: typeof add, getRule: typeof get) {
   // 内容长度
-  addRule('length', Number, ({ value }: { value: number }) => [
-    { len: value, message: `请输入${value}位字符` },
-  ]);
+  addRule('length', Number, ({ value }: { value: number }) => [{
+    validator(rule: any, val: string|any[], callback: (reason?: string) => void) {
+      if ((val?.length || 0) === value) callback();
+      else callback(`内容长度需要为${value}`);
+    },
+  }]);
 
   // 最小文本长度
-  addRule('minLength', Number, ({ value }: { value: number }) => [
-    { min: value, message: `内容最少${value}位字符` },
-  ]);
+  addRule('minLength', Number, ({ value }: { value: number }) => [{
+    validator(rule: any, val: string | any[], callback: (reason?: string) => void) {
+      if ((val?.length || 0) >= value) callback();
+      else callback(`内容长度最小为${value}`);
+    },
+  }]);
 
   // 最大文本长度
-  addRule('maxLength', Number, ({ value }: { value: number }) => [
-    { max: value, message: `内容最多${value}位字符` },
-  ]);
+  addRule('maxLength', Number, ({ value }: { value: number }) => [{
+    validator(rule: any, val: string|any[], callback: (reason?: string) => void) {
+      if ((val?.length || 0) <= value) callback();
+      else callback(`内容长度最大为${value}`);
+    },
+  }]);
 
   // 数字
   addRule('number', null, () => [{

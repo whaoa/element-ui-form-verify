@@ -31,6 +31,15 @@
       <el-form-item prop="word" label="英文字符" :verify="wordVerify" can-be-empty>
         <el-input v-model="form.word" placeholder="请输入英文字符(非必填)"/>
       </el-form-item>
+      <el-form-item prop="checked" label="数组数据(2)" verify :length="2">
+        <el-checkbox-group v-model="form.checked">
+          <el-checkbox label="复选框 A" />
+          <el-checkbox label="复选框 B" />
+          <el-checkbox label="复选框 C" />
+          <el-checkbox label="复选框 D" />
+          <el-checkbox label="复选框 E" />
+        </el-checkbox-group>
+      </el-form-item>
     </el-form>
 
     <el-button @click="validate">validate</el-button>
@@ -52,6 +61,7 @@ export default {
         email: '',
         phone: '',
         word: '',
+        checked: [],
       },
     };
   },
