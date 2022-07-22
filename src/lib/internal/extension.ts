@@ -32,7 +32,7 @@ export default function extension(ElFormItem: ElFormItemConstructor): ComponentO
       },
       // 是否为需要校验模式
       isVerifyMode() {
-        return !!this.prop && !!this.customValidator !== null;
+        return !!this.prop && this.customValidator !== null;
       },
     },
 

@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <el-form ref="form" :model="form" label-width="100px">
+      <el-form-item prop="number" label="数字(无校验)">
+        <el-input v-model="form.number" placeholder="请输入数字"/>
+      </el-form-item>
       <el-form-item prop="number" label="数字" verify number>
         <el-input v-model="form.number" placeholder="请输入数字"/>
       </el-form-item>
